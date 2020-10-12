@@ -1,0 +1,56 @@
+<h1>Hello from handlebars!</h1>
+
+<ul>
+    <li>description: {{desc}}</li>
+    <li>temp: {{temp}}</li>
+</ul>
+
+
+
+<form action="/" method="post">
+    <label for="city">City:</label>
+    <input type="text" name="city">
+    <br>
+    <label for="countryCode">country code:</label>
+    <input type="text" name="countryCode">
+
+    <br>
+    <input type="submit" value="submit">
+</form>
+
+
+
+{{!-- {{#each relevantData }}
+        <p> {{ @key }}</p>
+        <p> {{ this}} </p>
+    {{/each}} --}}
+
+
+
+    {{!-- {{#each relevantData }}
+    <li> {{ @key }} : {{ this}} </li>
+    {{/each}} --}}
+
+
+
+<ul>
+    {{#each relevantData as |data|}}
+    {{#if @last}}
+    {{@key}}
+
+
+
+    {{#each this}}
+    <ul>
+        <li>{{this}}</li>
+    </ul>
+    {{/each}}
+
+
+
+    {{else}}
+    <li>{{@key}} : {{data}}</li>
+    {{/if}}
+    {{/each}}
+</ul>
+
